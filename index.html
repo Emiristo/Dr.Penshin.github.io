@@ -77,6 +77,39 @@
     line-height: 1.7;
     margin-bottom: 16px;
 }
+        .work {
+    background-color: #f8fafc;
+    padding: 80px 20px;
+}
+
+.work-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.work h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.work-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #0f172a;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
     </style>
 </head>
 <body>
@@ -116,6 +149,21 @@
             я честно об этом говорю и помогаю найти нужного специалиста.
         </p>
     </div>
+    <section class="work">
+    <div class="work-container">
+        <h2>С чем я работаю</h2>
+
+        <div class="work-grid">
+            <div class="work-item">Спортивные травмы и перегрузки</div>
+            <div class="work-item">Реабилитация после операций</div>
+            <div class="work-item">Боли в спине и суставах</div>
+            <div class="work-item">Восстановление после травм</div>
+            <div class="work-item">Возвращение к тренировкам</div>
+            <div class="work-item">Профилактика повторных травм</div>
+        </div>
+    </div>
+</section>
+
 </section>
 </body>
 </html>
