@@ -2,30 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-
     <title>Dr Penshin — спортивный врач и реабилитолог</title>
 
-    <!-- SEO (пока закрыто от индексации) -->
-    <meta name="description" content="Личный сайт спортивного врача и реабилитолога.">
-    <meta name="robots" content="noindex, nofollow">
-
-    <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:,">
+    <meta name="robots" content="noindex, nofollow">
 
     <style>
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                          Roboto, Inter, Arial, sans-serif;
-            background-color: #0f172a;
-            color: #ffffff;
+            color: #0f172a;
         }
 
+        /* HERO */
         .hero {
             min-height: 100vh;
+            background-color: #0f172a;
+            color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -37,119 +31,111 @@
             max-width: 800px;
         }
 
-        h1 {
+        .hero h1 {
             font-size: 42px;
-            font-weight: 600;
             margin-bottom: 20px;
         }
 
-        h2 {
+        .hero h2 {
             font-size: 22px;
             font-weight: 400;
             opacity: 0.9;
             margin-bottom: 24px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            opacity: 0.85;
-        }
+        /* ABOUT */
         .about {
-    background-color: #ffffff;
-    color: #0f172a;
-    padding: 80px 20px;
-}
+            background-color: #ffffff;
+            padding: 80px 20px;
+        }
 
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.about h2 {
-    font-size: 32px;
-    margin-bottom: 24px;
-    font-weight: 600;
-}
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
 
-.about p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
+        .about p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        /* WORK */
         .work {
-    background-color: #f8fafc;
-    padding: 80px 20px;
-}
+            background-color: #f8fafc;
+            padding: 80px 20px;
+        }
 
-.work-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
+        .work-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-.work h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    font-weight: 600;
-    color: #0f172a;
-}
+        .work h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
 
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-}
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
 
-.work-item {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 24px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #0f172a;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-}
-
+        .work-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            font-size: 17px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
     </style>
 </head>
+
 <body>
 
 <section class="hero">
     <div class="hero-content">
         <h1>Спортивный врач и реабилитолог</h1>
         <h2>Помогаю восстановиться после травм и вернуться к движению без боли</h2>
-        <p>
-            Работаю с травмами, перегрузками и хронической болью.<br>
-            Индивидуальный подход. Доказательная медицина.
-        </p>
+        <p>Доказательная медицина · индивидуальный подход</p>
     </div>
 </section>
-    
+
 <section class="about">
     <div class="about-container">
         <h2>О враче</h2>
-
         <p>
             Я — врач спортивной медицины и медицинской реабилитации.
-            Работаю с травмами, перегрузками и состояниями, которые мешают
-            двигаться, тренироваться и жить без боли.
+            Работаю с травмами, перегрузками и состояниями,
+            которые мешают двигаться и тренироваться.
         </p>
-
         <p>
             В своей практике я опираюсь на медицинское образование,
-            современные научные данные и клинический опыт.
-            Моя цель — не «быстро убрать симптом», а разобраться в причине
-            проблемы и выстроить понятный, безопасный план восстановления.
+            научные данные и клинический опыт.
+            Моя задача — работать с причиной проблемы, а не только с симптомами.
         </p>
-
-        <p>
-            Я работаю со спортсменами и активными людьми,
-            а также с пациентами после операций и травм.
-            Если случай выходит за рамки моей компетенции —
-            я честно об этом говорю и помогаю найти нужного специалиста.
-        </p>
-</div>
-        
+    </div>
 </section>
+
+<section class="work">
+    <div class="work-container">
+        <h2>С чем я работаю</h2>
+        <div class="work-grid">
+            <div class="work-item">Спортивные травмы и перегрузки</div>
+            <div class="work-item">Реабилитация после операций</div>
+            <div class="work-item">Боли в спине и суставах</div>
+            <div class="work-item">Возвращение к тренировкам</div>
+            <div class="work-item">Хроническая боль</div>
+            <div class="work-item">Профилактика травм</div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
