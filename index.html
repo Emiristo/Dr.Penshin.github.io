@@ -87,13 +87,28 @@
             gap: 20px;
         }
 
-        .work-item {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 24px;
-            font-size: 17px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-        }
+       .work-item {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+}
+
+.icon {
+    font-size: 26px;
+}
+
+        
     </style>
 </head>
 
