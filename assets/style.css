@@ -177,3 +177,21 @@ a:hover {
 .btn:hover {
     opacity: 0.9;
 }
+/* WORK SECTION FIX */
+
+.work h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.work .grid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+}
