@@ -80,6 +80,13 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Disable underline for cards */
+a.card:hover,
+a.card:focus,
+a.card:active {
+    text-decoration: none !important;
+}
+
 /* HERO */
 
 .hero {
