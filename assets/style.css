@@ -25,12 +25,13 @@
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Inter, Arial, sans-serif;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", Roboto, Arial, sans-serif;
 
     background: var(--color-bg);
     color: var(--color-text);
 }
+
 
 /* LAYOUT */
 
