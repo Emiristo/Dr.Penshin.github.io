@@ -259,3 +259,25 @@ a.card:active {
 .card:active {
     text-decoration: none !important;
 }
+/* PAGE HEADER (for problems pages) */
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    margin-bottom: 40px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.page-header p {
+    max-width: 600px;
+    margin: 16px auto 0;
+
+    font-size: 18px;
+    color: #64748b;
+}
