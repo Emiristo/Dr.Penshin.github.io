@@ -173,9 +173,12 @@ a.card:active {
     padding-top: 30px;
     border-top: 1px solid #e2e8f0;
 
-    display: grid;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
 }
+
 
 /* BUTTON */
 
