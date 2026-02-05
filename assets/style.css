@@ -281,3 +281,46 @@ a.card:active {
     font-size: 18px;
     color: #64748b;
 }
+/* PROBLEM PAGE SYSTEM */
+
+.problem-section {
+    margin-bottom: 48px;
+}
+
+.problem-section h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+/* small clusters (same style everywhere) */
+
+.sub-cluster {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.sub-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    padding: 14px 12px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.18s ease;
+}
+
+.sub-card:hover {
+    background: #f9fafb;
+    border-color: #cbd5e1;
+}
+
