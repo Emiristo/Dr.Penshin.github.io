@@ -12,6 +12,38 @@
 <link rel="stylesheet" href="../assets/style.css">
 
 </head>
+<script>
+const pages = [
+    { title: "🦵 Боль в колене", url: "knee.html" },
+    { title: "🏃‍♂️ Перегрузки", url: "overload.html" },
+    { title: "🧍‍♂️ Спина и суставы", url: "back.html" },
+    { title: "⏱️ Возврат к тренировкам", url: "return.html" },
+    { title: "🔥 Хроническая боль", url: "chronic.html" },
+    { title: "🛡️ Профилактика", url: "prevention.html" }
+];
+
+// Убираем текущую страницу
+const current = window.location.pathname.split("/").pop();
+
+const filtered = pages.filter(p => p.url !== current);
+
+// Перемешиваем массив
+const shuffled = filtered.sort(() => 0.5 - Math.random());
+
+// Берём первые 2
+const selected = shuffled.slice(0, 2);
+
+const container = document.getElementById("random-links");
+
+// Вставляем ссылки
+selected.forEach(page => {
+    const link = document.createElement("a");
+    link.href = page.url;
+    link.textContent = "→ " + page.title;
+
+    container.appendChild(link);
+});
+</script>
 
 <body>
 
@@ -29,7 +61,13 @@
 ошибок и подходов к восстановлению.
 </p>
 
-<div class="nav">
+<div class="nav" id="random-links">
+
+
+
+  
+</div>
+
 
 <a href="knee.html">→ Боль в колене</a>
 
