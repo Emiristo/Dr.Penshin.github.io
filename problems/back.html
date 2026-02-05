@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 <meta charset="UTF-8">
 
 <title>Боль в спине и суставах — Dr Penshin</title>
-    <h1>Заголовок страницы</h1>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="../assets/style.css">
-
 </head>
 
 
@@ -17,27 +16,44 @@
 
 <div class="container">
 
-<h1>Заголовок страницы</h1>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
 
-<p>
-Краткое описание проблемы и почему
-её нельзя игнорировать.
-</p>
+        <h1>Боль в спине и суставах</h1>
 
-<p>
-Здесь будет разбор причин,
-ошибок и подходов к восстановлению.
-</p>
+        <p>
+            Почему возникает боль в спине и суставах
+            и как с ней работать безопасно.
+        </p>
 
-<div class="nav" id="random-links">
+    </div>
 
+
+    <!-- CONTENT -->
+    <p>
+        Краткое описание проблемы и почему
+        её нельзя игнорировать.
+    </p>
+
+    <p>
+        Здесь будет разбор причин,
+        ошибок и подходов к восстановлению.
+    </p>
+
+
+    <!-- RANDOM LINKS -->
+    <div class="nav" id="random-links"></div>
+
+
+    <!-- BACK -->
+    <div class="nav">
+        <a href="../index.html">← На главную</a>
+    </div>
 
 </div>
 
-<div class="nav">
-    <a href="../index.html">← На главную</a>
-</div>
 
+<!-- RANDOM SCRIPT -->
 <script>
 const pages = [
     { title: "🦵 Боль в колене", url: "knee.html" },
@@ -48,24 +64,18 @@ const pages = [
     { title: "🛡️ Профилактика", url: "prevention.html" }
 ];
 
-// Имя текущей страницы (например: back.html)
 const currentPage = window.location.pathname.split("/").pop();
 
-// Убираем ссылку на саму себя
 const filteredPages = pages.filter(page => page.url !== currentPage);
 
-// Перемешиваем
 const shuffled = filteredPages.sort(() => Math.random() - 0.5);
 
-// Берём 2 случайных
 const selected = shuffled.slice(0, 2);
 
 const container = document.getElementById("random-links");
 
-// Очищаем контейнер (на всякий случай)
 container.innerHTML = "";
 
-// Вставляем ссылки
 selected.forEach(page => {
     const link = document.createElement("a");
     link.href = page.url;
@@ -77,4 +87,3 @@ selected.forEach(page => {
 
 </body>
 </html>
-
