@@ -127,8 +127,6 @@ a.card:active {
 
 /* CARDS */
 
-/* CARDS */
-
 .card {
     background: #ffffff;
     border-radius: var(--radius);
@@ -293,10 +291,14 @@ a.card:active {
 
 /* small clusters (same style everywhere) */
 
+/* SUB CLUSTERS — VERTICAL (APPLE STYLE) */
+
 .sub-cluster {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-width: 420px;
     margin-top: 16px;
 }
 
@@ -306,12 +308,14 @@ a.card:active {
     border: 1px solid #e5e7eb;
     border-radius: 12px;
 
-    padding: 14px 12px;
+    padding: 12px 16px;
 
-    text-align: center;
+    text-align: left;
 
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
+
+    color: var(--color-dark);
 
     cursor: pointer;
 
@@ -322,4 +326,5 @@ a.card:active {
     background: #f9fafb;
     border-color: #cbd5e1;
 }
+
 
