@@ -1,58 +1,125 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>Боль в колене — Dr Penshin</title>
+<title>ЗАГОЛОВОК — Dr Penshin</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../assets/style.css">
-
+<link rel="stylesheet" href="../assets/style.css">
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <h1>Боль в колене</h1>
+<!-- HEADER -->
+<div class="page-header">
 
-    <p>
-        Боль в колене — одна из самых частых причин,
-        по которой спортсмены и активные люди
-        вынуждены снижать нагрузку или прекращать тренировки.
-    </p>
+<h1>ЗАГОЛОВОК</h1>
 
-    <p>
-        В большинстве случаев проблема связана не
-        с одним «повреждённым элементом», а с тем,
-        как распределяется нагрузка в движении.
-    </p>
-
-    <p>
-        На этой странице я разбираю,
-        как врач смотрит на боль в колене,
-        и какие факторы чаще всего остаются незамеченными.
-    </p>
-
-    <!-- Навигация внутрь системы -->
-    <div class="nav">
-
-        <a href="../myths/pain.html">
-            → Почему боль не всегда означает повреждение
-        </a>
-
-        <a href="../thinking/diagnostics.html">
-            → Как проходит медицинская диагностика
-        </a>
-
-        <a href="../index.html">
-            ← Вернуться на главную
-        </a>
-
-    </div>
+<p>
+Краткое описание проблемы в одном спокойном предложении.
+</p>
 
 </div>
+
+
+<!-- DESCRIPTION -->
+<div class="problem-section">
+
+<p>
+Основной текст: что это, почему возникает,
+почему важно не игнорировать.
+</p>
+
+</div>
+
+
+<!-- SUB CLUSTERS -->
+<div class="problem-section">
+
+<h2>Основные ситуации</h2>
+
+<div class="sub-cluster">
+
+<div class="sub-card" onclick="location.href='#'">
+Ситуация 1
+</div>
+
+<div class="sub-card" onclick="location.href='#'">
+Ситуация 2
+</div>
+
+<div class="sub-card" onclick="location.href='#'">
+Ситуация 3
+</div>
+
+<div class="sub-card" onclick="location.href='#'">
+Ситуация 4
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RELATED -->
+<div class="problem-section">
+
+<h2>Похожие направления</h2>
+
+<div class="cluster" id="random-links"></div>
+
+</div>
+
+
+<!-- NAV -->
+<div class="problem-section">
+
+<div class="nav">
+    <a href="../index.html">← На главную</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RANDOM SCRIPT -->
+<script>
+const pages = [
+    { title: "🦵 Боль в колене", url: "knee.html" },
+    { title: "🏃‍♂️ Перегрузки", url: "overload.html" },
+    { title: "🧍‍♂️ Спина и суставы", url: "back.html" },
+    { title: "⏱️ Возврат к тренировкам", url: "return.html" },
+    { title: "🔥 Хроническая боль", url: "chronic.html" },
+    { title: "🛡️ Профилактика", url: "prevention.html" }
+];
+
+const currentPage = window.location.pathname.split("/").pop();
+
+const filtered = pages.filter(p => p.url !== currentPage);
+
+const shuffled = filtered.sort(() => Math.random() - 0.5);
+
+const selected = shuffled.slice(0, 2);
+
+const container = document.getElementById("random-links");
+
+container.innerHTML = "";
+
+selected.forEach(page => {
+    const link = document.createElement("a");
+    link.href = page.url;
+    link.textContent = "→ " + page.title;
+
+    container.appendChild(link);
+});
+</script>
 
 </body>
 </html>
