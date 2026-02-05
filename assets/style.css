@@ -326,5 +326,8 @@ a.card:active {
     background: #f9fafb;
     border-color: #cbd5e1;
 }
+.sub-cluster {
+    border: 2px solid red !important;
+}
 
 
