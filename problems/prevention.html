@@ -101,4 +101,57 @@ content="Профилактика спортивных травм: индиви�
 и спортивную форму надолго.
 </p>
 
-<a href="../index.html#contact" class="btn
+<a href="../index.html#contact" class="btn">
+Записаться на консультацию
+</a>
+
+</section>
+
+
+<!-- NAV -->
+<section class="problem-section">
+
+<div class="nav">
+    <a href="../index.html">← На главную</a>
+</div>
+
+</section>
+
+</main>
+
+
+<!-- RANDOM SCRIPT -->
+<script>
+const pages = [
+    { title: "🦵 Боль в колене", url: "knee.html" },
+    { title: "🏃‍♂️ Перегрузки", url: "overload.html" },
+    { title: "🧍‍♂️ Спина и суставы", url: "back.html" },
+    { title: "⏱️ Возврат к тренировкам", url: "return.html" },
+    { title: "🔥 Хроническая боль", url: "chronic.html" },
+    { title: "🛡️ Профилактика", url: "prevention.html" }
+];
+
+const currentPage = window.location.pathname.split("/").pop();
+
+const filtered = pages.filter(p => p.url !== currentPage);
+
+const shuffled = filtered.sort(() => Math.random() - 0.5);
+
+const selected = shuffled.slice(0, 2);
+
+const container = document.getElementById("random-links");
+
+container.innerHTML = "";
+
+selected.forEach(page => {
+    const link = document.createElement("a");
+    link.href = page.url;
+    link.textContent = "→ " + page.title;
+
+    container.appendChild(link);
+});
+</script>
+
+</body>
+</html>
+
