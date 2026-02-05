@@ -49,18 +49,22 @@ const pages = [
     { title: "🛡️ Профилактика", url: "prevention.html" }
 ];
 
-// Убираем текущую страницу
-const current = window.location.pathname.split("/").pop();
+// Имя текущей страницы (например: back.html)
+const currentPage = window.location.pathname.split("/").pop();
 
-const filtered = pages.filter(p => p.url !== current);
+// Убираем ссылку на саму себя
+const filteredPages = pages.filter(page => page.url !== currentPage);
 
-// Перемешиваем массив
-const shuffled = filtered.sort(() => 0.5 - Math.random());
+// Перемешиваем
+const shuffled = filteredPages.sort(() => Math.random() - 0.5);
 
-// Берём первые 2
+// Берём 2 случайных
 const selected = shuffled.slice(0, 2);
 
 const container = document.getElementById("random-links");
+
+// Очищаем контейнер (на всякий случай)
+container.innerHTML = "";
 
 // Вставляем ссылки
 selected.forEach(page => {
@@ -71,6 +75,7 @@ selected.forEach(page => {
     container.appendChild(link);
 });
 </script>
+
 </body>
 </html>
 
