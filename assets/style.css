@@ -127,6 +127,8 @@ a.card:active {
 
 /* CARDS */
 
+/* CARDS */
+
 .card {
     background: #ffffff;
     border-radius: var(--radius);
@@ -145,8 +147,17 @@ a.card:active {
     color: var(--color-dark);
     text-decoration: none;
 
+    cursor: pointer;
+
     transition: all 0.2s ease;
 }
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+    background: #f1f5f9;
+}
+
 
 .card:hover {
     transform: translateY(-3px);
@@ -212,11 +223,6 @@ a.card:active {
     margin: 0 auto;
 }
 
-.card {
-    font-size: 18px;
-    font-weight: 500;
-    justify-content: center;
-    text-align: center;
 }
 /* HEADER */
 
@@ -251,13 +257,6 @@ a.card:active {
     color: var(--color-accent);
 }
 
-/* REMOVE UNDERLINE FROM CARDS */
-
-.card,
-.card:hover,
-.card:focus,
-.card:active {
-    text-decoration: none !important;
 }
 /* PAGE HEADER (for problems pages) */
 
