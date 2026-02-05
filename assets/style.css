@@ -214,7 +214,7 @@ a.card:active {
     margin: 0 auto;
 }
 
-}
+
 /* HEADER */
 
 .site-header {
@@ -248,7 +248,7 @@ a.card:active {
     color: var(--color-accent);
 }
 
-}
+
 /* PAGE HEADER (for problems pages) */
 
 .page-header {
@@ -321,7 +321,7 @@ a.card:active {
     transform: translateY(-2px);
 }
 
-}
+
 
 /* RELATED CLUSTERS — VERTICAL LIST */
 
