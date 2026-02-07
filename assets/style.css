@@ -377,3 +377,41 @@ a.card:active {
     animation: softFadeUp 0.7s ease forwards;
 }
 
+/* INFO BLOCK — FINAL LEVEL */
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 20px 22px;
+
+    box-shadow: 0 4px 14px rgba(15,23,42,0.05);
+
+    transition: all 0.2s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(15,23,42,0.1);
+}
+
+.info-item h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--color-dark);
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.6;
+}
