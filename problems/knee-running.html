@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<meta charset="UTF-8">
+
+<title>Боль в колене после бега | Dr Penshin</title>
+
+<meta name="description"
+content="Почему болит колено после бега и как восстановиться без осложнений.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+
+
+<body>
+
+<main class="container">
+
+<!-- HEADER -->
+<section class="page-header">
+
+<h1>Боль в колене после бега</h1>
+
+<p>
+Когда дискомфорт появляется после пробежек —
+важно понять его причину.
+</p>
+
+</section>
+
+
+<!-- DESCRIPTION -->
+<section class="problem-section">
+
+<p>
+Боль после бега часто связана
+с перегрузкой,
+ошибками техники
+или недостаточным восстановлением.
+
+Без коррекции проблема может
+перейти в хроническую форму.
+</p>
+
+</section>
+
+
+<!-- SUB CLUSTERS -->
+<section class="problem-section">
+
+<h2>Частые причины</h2>
+
+<div class="sub-cluster">
+
+<div class="sub-card">👟 Неподходящая обувь</div>
+<div class="sub-card">📈 Резкое увеличение нагрузки</div>
+<div class="sub-card">🦵 Слабость мышц</div>
+<div class="sub-card">🔄 Ошибки техники</div>
+
+</div>
+
+</section>
+
+
+<!-- RELATED -->
+<section class="problem-section">
+
+<h2>Похожие направления</h2>
+
+<div class="cluster" id="random-links"></div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="problem-section">
+
+<p>
+Если боль мешает тренироваться —
+лучше разобраться в её причине.
+</p>
+
+<a href="../index.html#contact" class="btn">
+Записаться на консультацию
+</a>
+
+</section>
+
+
+<!-- NAV -->
+<section class="problem-section">
+
+<div class="nav">
+    <a href="knee.html">← К разделу «Колено»</a>
+    <a href="../index.html">← На главную</a>
+</div>
+
+</section>
+
+</main>
+
+
+<!-- RANDOM SCRIPT -->
+<script>
+const pages = [
+    { title: "🏃‍♂️ После бега", url: "knee-running.html" },
+    { title: "🏋️ В зале", url: "knee-gym.html" },
+    { title: "🏥 После операции", url: "knee-surgery.html" },
+    { title: "⚽ Футбол", url: "knee-football.html" }
+];
+
+const current = window.location.pathname.split("/").pop();
+
+const filtered = pages.filter(p => p.url !== current);
+
+const shuffled = filtered.sort(() => Math.random() - 0.5);
+
+const selected = shuffled.slice(0, 3);
+
+const container = document.getElementById("random-links");
+
+container.innerHTML = "";
+
+selected.forEach(page => {
+    const link = document.createElement("a");
+    link.href = page.url;
+    link.textContent = "→ " + page.title;
+
+    container.appendChild(link);
+});
+</script>
+
+</body>
+</html>
