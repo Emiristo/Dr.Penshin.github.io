@@ -188,9 +188,13 @@ content="Почему болит колено после бега и как во
 <section class="problem-section">
 
 <div class="nav">
-    <a href="knee.html">← К разделу «Колено»</a>
-    <a href="../index.html">← На главную</a>
+
+<a href="knee.html">← К разделу «Колено»</a>
+
+<a href="javascript:history.back()">← Назад</a>
+
 </div>
+
 
 </section>
 
@@ -198,34 +202,7 @@ content="Почему болит колено после бега и как во
 
 
 <!-- RANDOM SCRIPT -->
-<script>
-const pages = [
-    { title: "🏃‍♂️ После бега", url: "knee-running.html" },
-    { title: "🏋️ В зале", url: "knee-gym.html" },
-    { title: "🏥 После операции", url: "knee-surgery.html" },
-    { title: "⚽ Футбол", url: "knee-football.html" }
-];
-
-const current = window.location.pathname.split("/").pop();
-
-const filtered = pages.filter(p => p.url !== current);
-
-const shuffled = filtered.sort(() => Math.random() - 0.5);
-
-const selected = shuffled.slice(0, 3);
-
-const container = document.getElementById("random-links");
-
-container.innerHTML = "";
-
-selected.forEach(page => {
-    const link = document.createElement("a");
-    link.href = page.url;
-    link.textContent = "→ " + page.title;
-
-    container.appendChild(link);
-});
-</script>
+<script src="../assets/knee-flow.js"></script>
 
 </body>
 </html>
