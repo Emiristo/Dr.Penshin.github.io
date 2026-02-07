@@ -51,104 +51,32 @@ content="Причины боли в колене, современные мет�
 
 </section>
 
-
-<!-- SUB CLUSTERS -->
+<!-- KNEE HUB -->
 <section class="problem-section">
 
-<h2>Основные ситуации</h2>
+<h2>Основные ситуации с коленом</h2>
 
-<div class="sub-cluster">
+<div class="grid grid-3">
 
-<div class="sub-card" onclick="location.href='knee-running.html'">
-🏃‍♂️ Боль после бега
-</div>
-
-<div class="sub-card" onclick="location.href='knee-gym.html'">
-🏋️ Боль в зале
-</div>
-
-<div class="sub-card" onclick="location.href='knee-surgery.html'">
-🏥 После операции
-</div>
-
-<div class="sub-card" onclick="location.href='knee-football.html'">
-⚽ Футбол и резкие нагрузки
-</div>
-
-</div>
-
-</section>
-
-
-<!-- RELATED -->
-<section class="problem-section">
-
-<h2>Похожие направления</h2>
-
-<div class="cluster" id="random-links"></div>
-
-</section>
-
-
-<!-- CTA -->
-<section class="problem-section">
-
-<p>
-Если боль в колене мешает тренировкам
-или повседневной активности —
-лучше разобраться в причине как можно раньше.
-</p>
-
-<a href="../index.html#contact" class="btn">
-Записаться на консультацию
+<a href="knee-running.html" class="card soft-appear">
+🏃‍♂️ После бега
 </a>
 
-</section>
+<a href="knee-gym.html" class="card soft-appear">
+🏋️ В тренажёрном зале
+</a>
 
+<a href="knee-surgery.html" class="card soft-appear">
+🏥 После операции
+</a>
 
-<!-- NAV -->
-<section class="problem-section">
+<a href="knee-football.html" class="card soft-appear">
+⚽ Футбол
+</a>
 
-<div class="nav">
-    <a href="../index.html">← На главную</a>
 </div>
 
 </section>
-
-</main>
-
-
-<!-- RANDOM SCRIPT -->
-<script>
-const pages = [
-    { title: "🦵 Боль в колене", url: "knee.html" },
-    { title: "🏃‍♂️ Перегрузки", url: "overload.html" },
-    { title: "🧍‍♂️ Спина и суставы", url: "back.html" },
-    { title: "⏱️ Возврат к тренировкам", url: "return.html" },
-    { title: "🔥 Хроническая боль", url: "chronic.html" },
-    { title: "🛡️ Профилактика", url: "prevention.html" }
-];
-
-const currentPage = window.location.pathname.split("/").pop();
-
-const filtered = pages.filter(p => p.url !== currentPage);
-
-const shuffled = filtered.sort(() => Math.random() - 0.5);
-
-const selected = shuffled.slice(0, 2);
-
-const container = document.getElementById("random-links");
-
-container.innerHTML = "";
-
-selected.forEach(page => {
-    const link = document.createElement("a");
-    link.href = page.url;
-    link.textContent = "→ " + page.title;
-
-    container.appendChild(link);
-});
-</script>
 
 </body>
 </html>
