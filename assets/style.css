@@ -472,3 +472,11 @@ a.card:active {
     transform: translateY(-50%) translateX(10px);
 }
 
+/* Remove underline from info cards */
+
+.info-item,
+.info-item:hover,
+.info-item:focus,
+.info-item:active {
+    text-decoration: none !important;
+}
