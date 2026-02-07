@@ -10,6 +10,10 @@ const kneePages = [
 
 // Ключ для памяти
 const STORAGE_KEY = "knee_path";
+// Если пользователь зашёл не изнутри кластера — сбрасываем путь
+if (document.referrer === "" || !document.referrer.includes("/problems/")) {
+  localStorage.removeItem(STORAGE_KEY);
+}
 
 // Текущая страница
 const currentFile = window.location.pathname.split("/").pop();
