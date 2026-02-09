@@ -85,7 +85,7 @@ content="Профилактика спортивных травм: индиви�
 <!-- RELATED -->
 <section class="problem-section">
 
-<h2>Похожие направления</h2>
+<h2>Другие направления</h2>
 
 <div class="cluster" id="random-links"></div>
 
@@ -120,38 +120,7 @@ content="Профилактика спортивных травм: индиви�
 </main>
 
 
-<!-- RANDOM SCRIPT -->
-<script>
-const pages = [
-    { title: "🦵 Боль в колене", url: "knee.html" },
-    { title: "🏃‍♂️ Перегрузки", url: "overload.html" },
-    { title: "🧍‍♂️ Спина и суставы", url: "back.html" },
-    { title: "⏱️ Возврат к тренировкам", url: "return.html" },
-    { title: "🔥 Хроническая боль", url: "chronic.html" },
-    { title: "🛡️ Профилактика", url: "prevention.html" }
-];
-
-const currentPage = window.location.pathname.split("/").pop();
-
-const filtered = pages.filter(p => p.url !== currentPage);
-
-const shuffled = filtered.sort(() => Math.random() - 0.5);
-
-const selected = shuffled.slice(0, 2);
-
-const container = document.getElementById("random-links");
-
-container.innerHTML = "";
-
-selected.forEach(page => {
-    const link = document.createElement("a");
-    link.href = page.url;
-    link.textContent = "→ " + page.title;
-
-    container.appendChild(link);
-});
-</script>
+<script src="../assets/random-links.js"></script>
 
 </body>
 </html>
-
