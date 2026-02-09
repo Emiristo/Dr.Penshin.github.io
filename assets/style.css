@@ -481,3 +481,19 @@ a.card:active {
 .info-item:active {
     text-decoration: none !important;
 }
+/* RELATED AS INFO CARDS */
+
+.related-item {
+  display: block;
+  text-decoration: none !important;
+}
+
+.related-item:hover {
+  text-decoration: none !important;
+}
+
+/* Чтобы не было popup внутри */
+
+.related-item .info-popup {
+  display: none !important;
+}
