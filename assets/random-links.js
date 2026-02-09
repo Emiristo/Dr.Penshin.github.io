@@ -1,32 +1,44 @@
-// ===== GLOBAL RELATED CLUSTERS =====
+// ===== RELATED CLUSTERS SYSTEM =====
 
-const clusters = [
-  { title: "🦵 Колено", url: "knee.html" },
-  { title: "🦴 Спина", url: "back.html" },
-  { title: "⚡ Перегрузка", url: "overload.html" }
-];
+document.addEventListener("DOMContentLoaded", function () {
 
-// Получаем контейнер
-const container = document.getElementById("random-links");
+  const clusters = [
+    { title: "🦵 Колено", url: "knee.html" },
+    { title: "🦴 Спина", url: "back.html" },
+    { title: "⚡ Перегрузка", url: "overload.html" }
+  ];
 
-if (container) {
+  // Контейнер
+  const container = document.getElementById("random-links");
+
+  if (!container) return;
+
+  // Текущая страница
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Убираем текущую
+  const filtered = clusters.filter(item => item.url !== currentPage);
 
   // Перемешиваем
-  const shuffled = clusters.sort(() => Math.random() - 0.5);
+  const shuffled = filtered.sort(() => 0.5 - Math.random());
 
-  // Берём 2 направления
+  // Берём только 2
   const selected = shuffled.slice(0, 2);
 
+  // Очищаем контейнер
+  container.innerHTML = "";
+
+  // Создаём карточки
   selected.forEach(item => {
 
-    const a = document.createElement("a");
+    const link = document.createElement("a");
 
-    a.href = item.url;
-    a.className = "cluster-card";
+    link.href = item.url;
+    link.className = "cluster-card";
+    link.textContent = item.title;
 
-    a.textContent = item.title;
-
-    container.appendChild(a);
+    container.appendChild(link);
 
   });
-}
+
+});
