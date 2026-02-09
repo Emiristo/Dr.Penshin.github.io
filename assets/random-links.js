@@ -1,49 +1,77 @@
-// ===== RELATED CLUSTERS SYSTEM (FINAL) =====
+// ===== RELATED CLUSTERS (FROM INDEX) =====
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Все кластеры проекта
+  // Кластеры строго из index.html
   const clusters = [
+
     {
-      id: "back",
-      title: "🦴 Спина",
+      title: "🦵 Боль в колене",
+      text: "Перегрузки, травмы и восстановление коленного сустава.",
+      url: "knee.html"
+    },
+
+    {
+      title: "🏃‍♂️ Перегрузки",
+      text: "Переутомление, усталость и восстановление после нагрузок.",
+      url: "overload.html"
+    },
+
+    {
+      title: "🧍‍♂️ Спина и суставы",
       text: "Осанка, тренировки, бег и хроническая боль.",
       url: "back.html"
     },
+
     {
-      id: "knee",
-      title: "🦵 Колено",
-      text: "Боль, перегрузки и восстановление коленного сустава.",
-      url: "knee.html"
+      title: "⏱️ Возврат к тренировкам",
+      text: "Безопасное восстановление после паузы и травм.",
+      url: "return.html"
     },
+
     {
-      id: "overload",
-      title: "⚡ Перегрузка",
-      text: "Перетренированность, усталость и восстановление.",
-      url: "overload.html"
+      title: "🔥 Хроническая боль",
+      text: "Длительные болевые синдромы и работа с причинами.",
+      url: "chronic.html"
+    },
+
+    {
+      title: "🛡️ Профилактика",
+      text: "Предотвращение травм и поддержание формы.",
+      url: "prevention.html"
     }
+
   ];
 
+
+  // Контейнер
   const container = document.getElementById("random-links");
 
   if (!container) return;
 
-  // Имя текущей страницы
+
+  // Текущая страница
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Убираем текущий кластер
-  const available = clusters.filter(c => c.url !== currentPage);
 
-  // Перемешиваем (настоящий shuffle)
+  // Убираем текущую
+  let available = clusters.filter(c => c.url !== currentPage);
+
+
+  // Fisher-Yates shuffle
   for (let i = available.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [available[i], available[j]] = [available[j], available[i]];
   }
 
-  // Берём максимум 2
+
+  // Берём 2
   const selected = available.slice(0, 2);
 
+
+  // Чистим контейнер
   container.innerHTML = "";
+
 
   // Рендер
   selected.forEach(item => {
