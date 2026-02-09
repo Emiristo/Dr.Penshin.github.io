@@ -323,16 +323,6 @@ a.card:active {
 
 
 
-/* RELATED CLUSTERS — VERTICAL LIST */
-
-.cluster {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px;
-
-    max-width: 420px;
-    margin-top: 16px;
-}
 
 /* Links inside related */
 
@@ -481,19 +471,52 @@ a.card:active {
 .info-item:active {
     text-decoration: none !important;
 }
-/* RELATED AS INFO CARDS */
 
-.related-item {
-  display: block;
-  text-decoration: none !important;
-}
-
-.related-item:hover {
-  text-decoration: none !important;
-}
 
 /* Чтобы не было popup внутри */
 
 .related-item .info-popup {
   display: none !important;
 }
+
+/* RELATED = INFO STYLE */
+
+.cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cluster .related-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  padding: 20px 22px;
+
+  box-shadow: 0 4px 14px rgba(15,23,42,0.05);
+
+  transition: all 0.2s ease;
+
+  text-decoration: none !important;
+}
+
+.cluster .related-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.1);
+}
+
+.cluster .related-item h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--color-dark);
+}
+
+.cluster .related-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+
