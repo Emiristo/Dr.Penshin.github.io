@@ -1,19 +1,23 @@
-// ===== RELATED CLUSTERS SYSTEM =====
+// ===== RELATED CLUSTERS SYSTEM (FINAL) =====
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  // Все кластеры проекта
   const clusters = [
     {
-      title: "🦵 Колено",
-      text: "Боль, перегрузки и восстановление коленного сустава.",
-      url: "knee.html"
-    },
-    {
+      id: "back",
       title: "🦴 Спина",
       text: "Осанка, тренировки, бег и хроническая боль.",
       url: "back.html"
     },
     {
+      id: "knee",
+      title: "🦵 Колено",
+      text: "Боль, перегрузки и восстановление коленного сустава.",
+      url: "knee.html"
+    },
+    {
+      id: "overload",
       title: "⚡ Перегрузка",
       text: "Перетренированность, усталость и восстановление.",
       url: "overload.html"
@@ -24,19 +28,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!container) return;
 
-  const current = window.location.pathname.split("/").pop();
+  // Имя текущей страницы
+  const currentPage = window.location.pathname.split("/").pop();
 
   // Убираем текущий кластер
-  const filtered = clusters.filter(c => c.url !== current);
+  const available = clusters.filter(c => c.url !== currentPage);
 
-  // Перемешиваем
-  const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+  // Перемешиваем (настоящий shuffle)
+  for (let i = available.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [available[i], available[j]] = [available[j], available[i]];
+  }
 
-  // Берём 2
-  const selected = shuffled.slice(0, 2);
+  // Берём максимум 2
+  const selected = available.slice(0, 2);
 
   container.innerHTML = "";
 
+  // Рендер
   selected.forEach(item => {
 
     const link = document.createElement("a");
@@ -50,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     container.appendChild(link);
+
   });
 
 });
