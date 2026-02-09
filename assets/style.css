@@ -336,7 +336,7 @@ a.card:active {
 
 /* Links inside related */
 
-.cluster a {
+.cluster-card {
     display: block;
 
     background: #ffffff;
@@ -355,10 +355,11 @@ a.card:active {
     transition: all 0.18s ease;
 }
 
-.cluster a:hover {
+.cluster-card:hover {
     background: #f9fafb;
     border-color: #cbd5e1;
 }
+
 
 /* SOFT APPEAR */
 
