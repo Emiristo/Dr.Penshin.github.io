@@ -1,0 +1,111 @@
+// ===== OVERLOAD SMART FLOW SYSTEM =====
+
+
+// Все страницы кластера "Перегрузка"
+const overloadPages = [
+  { id: "training", title: "🏋️ Тренировки", url: "overload-training.html" },
+  { id: "work", title: "💼 Работа", url: "overload-work.html" },
+  { id: "running", title: "🏃‍♂️ Бег", url: "overload-running.html" },
+  { id: "chronic", title: "⏳ Хроническая усталость", url: "overload-chronic.html" }
+];
+
+
+// Ключ памяти
+const STORAGE_KEY = "overload_path";
+
+
+// Если пользователь зашёл извне — сбрасываем путь
+if (document.referrer === "" || !document.referrer.includes("/problems/")) {
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+
+// Текущая страница
+const currentFile = window.location.pathname.split("/").pop();
+
+
+// Определяем текущий id
+const currentPage = overloadPages.find(p => p.url === currentFile);
+
+
+if (!currentPage) {
+
+  console.warn("Not an overload subpage");
+
+} else {
+
+  // Получаем историю
+  let visited = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+
+  // Добавляем текущую
+  if (!visited.includes(currentPage.id)) {
+    visited.push(currentPage.id);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(visited));
+  }
+
+
+  // Оставшиеся страницы
+  const remaining = overloadPages.filter(
+    p => !visited.includes(p.id)
+  );
+
+
+  // Перемешиваем
+  const shuffled = remaining.sort(() => Math.random() - 0.5);
+
+
+  // Сколько показывать
+  let count = 3;
+
+  if (remaining.length === 2) count = 2;
+  if (remaining.length === 1) count = 1;
+  if (remaining.length === 0) count = 0;
+
+
+  const selected = shuffled.slice(0, count);
+
+
+  // Контейнер
+  const container = document.getElementById("overload-flow");
+
+
+  if (container) {
+
+    container.innerHTML = "";
+
+
+    if (selected.length > 0) {
+
+      // Показываем карточки
+      selected.forEach(page => {
+
+        const link = document.createElement("a");
+
+        link.href = page.url;
+        link.className = "card";
+
+        link.textContent = page.title;
+
+        container.appendChild(link);
+
+      });
+
+    } else {
+
+      // Конец маршрута
+      const done = document.createElement("div");
+
+      done.className = "card";
+      done.textContent = "✅ Вы изучили все ситуации перегрузки";
+
+      container.appendChild(done);
+
+
+      // Очищаем путь
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+  }
+
+}
