@@ -251,6 +251,8 @@
 
     const video = card.querySelector('video');
 
+    if (!video) return;
+
     card.addEventListener('mouseenter', () => {
       video.play();
     });
@@ -262,6 +264,7 @@
 
   });
 </script>
+
 
 </body>
 </html>
