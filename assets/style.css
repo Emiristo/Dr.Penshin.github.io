@@ -267,95 +267,126 @@ a.card:hover {
 /* =================================================
    PROCESS CARDS (CORE BLOCK)
 ================================================= */
+/* =================================================
+   PROCESS CARDS — POSTER → VIDEO HOVER
+================================================= */
 
 .process-cards {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:36px;
-  margin-top:64px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  margin-top: 64px;
 }
 
+/* CARD */
+
 .process-card {
-  position:relative;
-  aspect-ratio:4/3;
+  position: relative;
+  aspect-ratio: 4 / 3;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
-  padding:32px;
-  border-radius:18px;
-  overflow:hidden;
+  padding: 32px;
+  border-radius: 18px;
+  overflow: hidden;
 
-  text-decoration:none;
-  color:inherit;
+  text-decoration: none;
+  color: inherit;
 
-  background:#111;
-  cursor:pointer;
+  cursor: pointer;
 
-  transition:.28s ease;
+  transition: transform .28s ease, box-shadow .28s ease;
 }
 
 .process-card:hover {
-  transform:translateY(-10px) scale(1.01);
-  box-shadow:0 35px 80px rgba(15,23,42,.22);
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 35px 80px rgba(15,23,42,.22);
 }
 
-/* VIDEO LAYER */
+/* MEDIA LAYER */
 
 .process-media {
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transition:opacity .35s ease;
-  z-index:1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
-.process-card:hover .process-media {
-  opacity:1;
-}
+/* VIDEO */
 
 .process-media video {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.75);
-  pointer-events:none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* КЛЮЧЕВОЕ */
+  opacity: 0;
+  transition: opacity .35s ease;
+
+  filter: brightness(.8);
+  pointer-events: none;
 }
 
-/* gradient readability */
+/* VIDEO APPEARS ON HOVER */
+
+.process-card:hover video {
+  opacity: 1;
+}
+
+/* GRADIENT FOR TEXT READABILITY */
 
 .process-media::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
     to top,
-    rgba(0,0,0,.6),
+    rgba(0,0,0,.55),
     rgba(0,0,0,.2),
     transparent
   );
+  z-index: 2;
 }
 
 /* TEXT */
 
 .process-card h4,
 .process-card p {
-  position:relative;
-  z-index:2;
+  position: relative;
+  z-index: 3;
 }
 
 .process-card h4 {
-  margin:0 0 10px;
-  font-size:20px;
-  font-weight:600;
-  color:#fff;
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .process-card p {
-  margin:0;
-  font-size:15px;
-  color:rgba(255,255,255,.85);
+  margin: 0;
+  font-size: 15px;
+  color: rgba(255,255,255,.85);
+}
+
+/* MOBILE */
+
+@media (max-width:768px) {
+
+  .process-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .process-card {
+    padding: 20px;
+  }
+
+  /* на мобиле видео всегда видно */
+  .process-media video {
+    opacity: 1;
+  }
 }
 
 /* =================================================
