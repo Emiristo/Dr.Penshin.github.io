@@ -266,33 +266,39 @@ document.querySelectorAll('.process-card').forEach(card => {
 
 });
 </script>
-    <script>
+<script>
 /* ACTIVE MENU HIGHLIGHT — FIXED */
+
+const sections = [
+  document.querySelector("#home"),
+  document.querySelector("#about"),
+  document.querySelector("#work-process"),
+  document.querySelector("#work"),
+  document.querySelector("#contact")
+];
 
 const navLinks = document.querySelectorAll(".main-nav a");
 
-const sections = Array.from(navLinks)
-  .map(link => document.querySelector(link.getAttribute("href")))
-  .filter(section => section !== null);
-
 window.addEventListener("scroll", () => {
 
-  let currentSection = "";
+  let current = "";
 
   sections.forEach(section => {
-    const top = section.offsetTop - 140;
-    const height = section.offsetHeight;
+    if (!section) return;
 
-    if (window.scrollY >= top &&
-        window.scrollY < top + height) {
-      currentSection = section.id;
+    const sectionTop = section.offsetTop - 140;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight) {
+      current = section.id;
     }
   });
 
   navLinks.forEach(link => {
     link.classList.remove("active");
 
-    if (link.getAttribute("href") === "#" + currentSection) {
+    if (link.getAttribute("href") === "#" + current) {
       link.classList.add("active");
     }
   });
