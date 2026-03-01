@@ -666,24 +666,24 @@ a.card:active {
 .process-media {
   position: absolute;
   inset: 0;
-
  background: transparent;
-
-  opacity: 0;
-  pointer-events: none;
-
-  transition: opacity 0.25s ease;
   z-index: 1;
 }
 
+
 .process-media video {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
-  object-fit: cover;
 
-  /* делает текст читаемым */
+  object-fit: cover;
+  display: block;
+
   filter: brightness(0.75);
 }
+
 
 /* SHOW VIDEO ON HOVER */
 
