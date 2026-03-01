@@ -666,10 +666,6 @@ a.card:active {
 .process-media {
   position: absolute;
   inset: 0;
-
-  opacity: 0;
-  transition: opacity 0.35s ease;
-
   z-index: 1;
 }
 
@@ -678,18 +674,7 @@ a.card:active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
   filter: brightness(0.75);
-}
-.process-card:hover video {
-  opacity: 1;
-}
-
-
-/* SHOW VIDEO ON HOVER */
-
-.process-card:hover .process-media {
-  opacity: 1;
 }
 
 /* TEXT LAYER */
