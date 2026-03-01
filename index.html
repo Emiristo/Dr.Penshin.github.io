@@ -267,16 +267,9 @@ document.querySelectorAll('.process-card').forEach(card => {
 });
 </script>
 <script>
-/* ACTIVE MENU HIGHLIGHT — FIXED */
+/* ACTIVE MENU HIGHLIGHT — FINAL */
 
-const sections = [
-  document.querySelector("#home"),
-  document.querySelector("#about"),
-  document.querySelector("#work-process"),
-  document.querySelector("#work"),
-  document.querySelector("#contact")
-];
-
+const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".main-nav a");
 
 window.addEventListener("scroll", () => {
@@ -284,14 +277,10 @@ window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach(section => {
-    if (!section) return;
+    const sectionTop = section.offsetTop - 160;
 
-    const sectionTop = section.offsetTop - 140;
-    const sectionHeight = section.offsetHeight;
-
-    if (window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight) {
-      current = section.id;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
     }
   });
 
