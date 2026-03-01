@@ -653,6 +653,7 @@ a.card:active {
 
   will-change: transform;
   transition: all 0.28s ease;
+   gap: 6px;
 }
 
 .process-card:hover {
@@ -700,22 +701,38 @@ a.card:active {
 }
 
 .process-card h4 {
-  margin: 0 0 8px;
-  font-size: 18px;
+  margin: 0 0 10px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+
   color: var(--color-dark);
+
 }
 
 .process-card p {
   margin: 0;
-  font-size: 15px;
-  color: #475569;
-}
 
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+
+  color: #64748b;
+}
 /* TEXT COLOR ON HOVER */
 
-.process-card:hover h4,
-.process-card:hover p {
+.process-card:hover h4 {
   color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.process-card:hover p {
+  color: rgba(255,255,255,0.85);
 }
 
 /* =========================
