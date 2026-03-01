@@ -679,6 +679,8 @@ a.card:active {
   will-change: transform;
   transition: transform 0.28s ease, box-shadow 0.28s ease;
    gap: 6px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .process-card:hover {
