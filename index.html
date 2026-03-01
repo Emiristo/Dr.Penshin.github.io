@@ -267,36 +267,37 @@ document.querySelectorAll('.process-card').forEach(card => {
 });
 </script>
     <script>
-/* ACTIVE MENU HIGHLIGHT */
+/* ACTIVE MENU HIGHLIGHT — FIXED */
 
-const sections = document.querySelectorAll("section, [id='work-process']");
 const navLinks = document.querySelectorAll(".main-nav a");
+
+const sections = Array.from(navLinks)
+  .map(link => document.querySelector(link.getAttribute("href")))
+  .filter(section => section !== null);
 
 window.addEventListener("scroll", () => {
 
-  let current = "";
+  let currentSection = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
+    const top = section.offsetTop - 140;
+    const height = section.offsetHeight;
 
-    if (scrollY >= sectionTop &&
-        scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
+    if (window.scrollY >= top &&
+        window.scrollY < top + height) {
+      currentSection = section.id;
     }
   });
 
   navLinks.forEach(link => {
     link.classList.remove("active");
 
-    if (link.getAttribute("href") === "#" + current) {
+    if (link.getAttribute("href") === "#" + currentSection) {
       link.classList.add("active");
     }
   });
 
 });
 </script>
-
-
 </body>
 </html>
