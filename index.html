@@ -258,7 +258,10 @@ document.querySelectorAll('.process-card').forEach(card => {
 
   card.addEventListener('mouseleave', () => {
     video.pause();
+
+    // ключевой момент ↓↓↓
     video.currentTime = 0;
+    video.load(); // ← возвращает poster
   });
 
 });
