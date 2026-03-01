@@ -26,8 +26,8 @@
         <nav class="main-nav">
             <a href="./">Главная</a>
             <a href="#about">О враче</a>
-            <a href="problems/">Как я работаю</a>
-            <a href="problems/">Направления</a>
+            <a href="#work-process">Как я работаю</a>
+            <a href="#problems/">Направления</a>
             <a href="#contact">Контакты</a>
         </nav>
 
@@ -262,6 +262,36 @@ document.querySelectorAll('.process-card').forEach(card => {
     // ключевой момент ↓↓↓
     video.currentTime = 0;
     video.load(); // ← возвращает poster
+  });
+
+});
+</script>
+    <script>
+/* ACTIVE MENU HIGHLIGHT */
+
+const sections = document.querySelectorAll("section, [id='work-process']");
+const navLinks = document.querySelectorAll(".main-nav a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.offsetHeight;
+
+    if (scrollY >= sectionTop &&
+        scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
   });
 
 });
