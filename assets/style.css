@@ -334,19 +334,28 @@ a.card:hover {
   opacity: 1;
 }
 
-/* GRADIENT FOR TEXT READABILITY */
+/* GRADIENT ONLY ON HOVER */
 
 .process-media::after {
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to top,
     rgba(0,0,0,.55),
     rgba(0,0,0,.2),
     transparent
   );
+
+  opacity: 0;
+  transition: opacity .35s ease;
+
   z-index: 2;
+}
+
+.process-card:hover .process-media::after {
+  opacity: 1;
 }
 
 /* TEXT */
