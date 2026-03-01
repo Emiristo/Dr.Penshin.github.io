@@ -35,9 +35,7 @@ body {
     background: var(--color-bg);
     color: var(--color-text);
 }
-html {
-  scroll-behavior: smooth;
-}
+
 
 /* LAYOUT */
 
@@ -694,6 +692,12 @@ a.card:active {
   position: absolute;
   inset: 0;
   z-index: 1;
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.process-card:hover .process-media {
+  opacity: 1;
 }
 
 
@@ -702,6 +706,7 @@ a.card:active {
   height: 100%;
   object-fit: cover;
   filter: brightness(0.75);
+  pointer-events: none;
 }
 
 /* TEXT LAYER */
