@@ -652,7 +652,7 @@ a.card:active {
   cursor: pointer;
 
   will-change: transform;
-  transition: all 0.28s ease;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
    gap: 6px;
 }
 
@@ -667,7 +667,7 @@ a.card:active {
   position: absolute;
   inset: 0;
 
-  background: #000;
+ background: rgba(15,23,42,0.55);
 
   opacity: 0;
   pointer-events: none;
@@ -698,6 +698,7 @@ a.card:active {
   position: relative;
   z-index: 2;
   transition: color 0.2s ease;
+   will-change: transform;
 }
 
 .process-card h4 {
