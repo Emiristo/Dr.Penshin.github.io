@@ -696,7 +696,7 @@ a.card:active {
   letter-spacing: -0.01em;
   line-height: 1.25;
 
-  color: var(--color-dark);
+ color: #ffffff;
 
 }
 
@@ -709,7 +709,7 @@ a.card:active {
   line-height: 1.6;
   letter-spacing: 0.01em;
 
-  color: #64748b;
+ color: rgba(255,255,255,0.8);
 }
 /* TEXT COLOR ON HOVER */
 
