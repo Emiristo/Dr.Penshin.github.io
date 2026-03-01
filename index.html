@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 <meta charset="UTF-8">
 <title>Dr Penshin — спортивный врач и реабилитолог</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 
+<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/style.css">
+<!-- ===== BASE DESIGN SYSTEM ===== -->
+<link rel="stylesheet" href="assets/css/base.css">
+
+<!-- ===== SECTION MODULES ===== -->
+<link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="assets/css/about.css">
+<link rel="stylesheet" href="assets/css/process.css">
+<link rel="stylesheet" href="assets/css/work.css">
+<link rel="stylesheet" href="assets/css/contact.css">
+
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =================================================
+HEADER
+================================================= -->
 
 <header class="site-header">
 <div class="container">
@@ -35,9 +48,11 @@
 </div>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- =================================================
+HOME / HERO
+================================================= -->
 
-<section class="hero section-dark" id="home">
+<section id="home" class="section-dark hero">
 <div class="container hero-content">
 
 <h1>
@@ -63,9 +78,11 @@ Sports Medicine & Rehabilitation<br>
 </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
+<!-- =================================================
+ABOUT
+================================================= -->
 
-<section class="section-light" id="about">
+<section id="about" class="section-light">
 <div class="container about-grid">
 
 <div class="about-photo">
@@ -117,16 +134,17 @@ Sports Medicine & Rehabilitation<br>
 </div>
 </section>
 
-<!-- ================= WORK PROCESS ================= -->
+<!-- =================================================
+WORK PROCESS
+================================================= -->
 
-<section class="section-light about-process" id="work-process">
+<section id="work-process" class="section-light">
 <div class="container">
 
 <h3>Как проходит работа</h3>
 
 <div class="process-cards">
 
-<!-- 1 -->
 <a href="workprocess/diagnostic.html" class="process-card">
 <div class="process-media">
 <video src="media/process/diagnostic.mp4"
@@ -137,7 +155,6 @@ muted loop playsinline preload="metadata"></video>
 <p>Анализ движений и причины боли</p>
 </a>
 
-<!-- 2 -->
 <a href="workprocess/plan.html" class="process-card">
 <div class="process-media">
 <video src="media/process/plan.mp4"
@@ -148,7 +165,6 @@ muted loop playsinline preload="metadata"></video>
 <p>Индивидуальная программа восстановления</p>
 </a>
 
-<!-- 3 -->
 <a href="workprocess/control.html" class="process-card">
 <div class="process-media">
 <video src="media/process/control.mp4"
@@ -159,7 +175,6 @@ muted loop playsinline preload="metadata"></video>
 <p>Адаптация нагрузки</p>
 </a>
 
-<!-- 4 -->
 <a href="workprocess/return.html" class="process-card">
 <div class="process-media">
 <video src="media/process/return.mp4"
@@ -174,9 +189,11 @@ muted loop playsinline preload="metadata"></video>
 </div>
 </section>
 
-<!-- ================= WORK ================= -->
+<!-- =================================================
+WORK DIRECTIONS
+================================================= -->
 
-<section class="work section-soft" id="work">
+<section id="work" class="section-soft">
 <div class="container">
 
 <h2>С чем я работаю</h2>
@@ -195,9 +212,11 @@ muted loop playsinline preload="metadata"></video>
 </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
+<!-- =================================================
+CONTACT
+================================================= -->
 
-<section class="section-light" id="contact">
+<section id="contact" class="section-light">
 <div class="container">
 
 <h2>Контакты</h2>
@@ -208,7 +227,9 @@ muted loop playsinline preload="metadata"></video>
 </div>
 </section>
 
-<!-- ================= VIDEO HOVER ================= -->
+<!-- =================================================
+VIDEO HOVER
+================================================= -->
 
 <script>
 document.querySelectorAll('.process-card').forEach(card => {
@@ -220,13 +241,15 @@ card.addEventListener('mouseenter', () => video.play());
 card.addEventListener('mouseleave', () => {
 video.pause();
 video.currentTime = 0;
-video.load(); // возвращает poster
+video.load();
 });
 
 });
 </script>
 
-<!-- ================= ACTIVE MENU ================= -->
+<!-- =================================================
+ACTIVE MENU
+================================================= -->
 
 <script>
 const sections = document.querySelectorAll("section");
@@ -238,19 +261,23 @@ let current = "";
 const middle = window.scrollY + window.innerHeight / 2;
 
 sections.forEach(section => {
+
 const top = section.offsetTop;
 const bottom = top + section.offsetHeight;
 
 if (middle >= top && middle < bottom) {
 current = section.id;
 }
+
 });
 
 navLinks.forEach(link => {
 link.classList.remove("active");
+
 if (link.getAttribute("href") === "#" + current) {
 link.classList.add("active");
 }
+
 });
 
 });
