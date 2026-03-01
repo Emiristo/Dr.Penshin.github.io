@@ -681,6 +681,9 @@ a.card:active {
 
   filter: brightness(0.75);
 }
+.process-card:hover video {
+  opacity: 1;
+}
 
 
 /* SHOW VIDEO ON HOVER */
