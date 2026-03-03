@@ -1,0 +1,31 @@
+/* =================================================
+   WORK SECTION
+================================================= */
+
+.work h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+}
+
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 18px 40px rgba(15,23,42,.15);
+}
