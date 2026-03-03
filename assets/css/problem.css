@@ -94,40 +94,45 @@ main.container {
 }
 
 /* =================================================
-   RELATED LINKS
+   RELATED LINKS — CONSISTENT SYSTEM
 ================================================= */
 
 .problem-cluster {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 24px;
+  gap: 18px;
+  margin-top: 30px;
 }
 
 .problem-cluster a {
   display: block;
 
-  padding: 18px 22px;
+  padding: 22px 26px;
 
-  border-radius: 14px;
-  border: 1px solid #eef2f6;
+  border-radius: 16px;
+  border: 1px solid #e8edf2;
 
-  background: #f8fafc;
+  background: #ffffff;
 
   text-decoration: none;
   color: var(--color-dark);
 
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 500;
 
-  transition: all .2s ease;
+  transition: all .25s ease;
+}
+
+/* лёгкий акцент слева */
+.problem-cluster a {
+  border-left: 4px solid transparent;
 }
 
 .problem-cluster a:hover {
-  background: #ffffff;
-  border-color: #dbe3ec;
-  transform: translateY(-2px);
+  border-left: 4px solid var(--color-accent);
+  background: #f9fbfd;
+  transform: translateX(4px);
 }
-
 /* =================================================
    NAV BACK
 ================================================= */
