@@ -1,0 +1,32 @@
+/* =================================================
+   HOME / HERO
+================================================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #ffffff;
+}
+
+.hero h2 {
+  font-size: clamp(20px,3vw,24px);
+  font-weight: 400;
+  opacity: .9;
+}
+
+.hero p {
+  max-width: 520px;
+  margin: 0 auto;
+  opacity: .8;
+}
