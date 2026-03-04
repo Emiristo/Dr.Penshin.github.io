@@ -63,7 +63,7 @@ if (!currentPage) {
         const link = document.createElement("a");
 
         link.href = page.url;
-        link.className = "card";
+        link.className = "cluster-card";
 
         link.textContent = page.title;
 
