@@ -153,3 +153,54 @@ main.container {
 .problem-section .btn {
   margin-top: 20px;
 }
+/* ===============================
+   HOVER IMAGE PREVIEW
+================================ */
+
+.problem-preview {
+  position: relative;
+  overflow: visible;
+}
+
+.problem-popup {
+
+  position: absolute;
+  top: 50%;
+  right: -260px;
+
+  transform: translateY(-50%);
+
+  width: 240px;
+
+  background: #ffffff;
+  border-radius: 14px;
+
+  border: 1px solid #e5e7eb;
+
+  padding: 12px;
+
+  box-shadow: 0 12px 30px rgba(15,23,42,0.15);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all .25s ease;
+  z-index: 20;
+}
+
+.problem-popup img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.problem-popup p {
+  margin: 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.problem-preview:hover .problem-popup {
+  opacity: 1;
+  transform: translateY(-50%) translateX(8px);
+}
