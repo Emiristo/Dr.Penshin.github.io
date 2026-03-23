@@ -604,3 +604,54 @@ a.card:hover {
 .about-photo img:hover {
   transform: scale(1.01);
 }
+/* ===============================
+   ABOUT FACTS — PREMIUM BLOCK
+================================ */
+
+.about-facts {
+  margin: 44px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Карточка строки */
+
+.fact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 20px;
+  border-radius: 12px;
+
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+
+  transition: all .25s ease;
+}
+
+/* subtle hover */
+
+.fact-item:hover {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15,23,42,.06);
+}
+
+/* Лейбл (Фокус) */
+
+.fact-label {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+/* Значение */
+
+.fact-value {
+  font-size: 16px;
+  color: var(--color-dark);
+  text-align: right;
+  max-width: 60%;
+}
