@@ -508,3 +508,99 @@ a.card:hover {
   color: #cbd5e1;
   font-size: 14px;
 }
+/* ===============================
+   ABOUT — PREMIUM REFINEMENT
+================================ */
+
+/* Контент как колонка */
+
+.about-content {
+  max-width: 520px;
+}
+
+/* Заголовок — чище */
+
+.about-content h2 {
+  margin-bottom: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Первый абзац — якорь */
+
+.about-lead {
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--color-dark);
+  margin-bottom: 32px;
+}
+
+/* Основной текст — легче */
+
+.about-content p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* Разделение смысловых блоков */
+
+.about-content p + p {
+  margin-top: 10px;
+}
+
+/* Убираем "кашу" — даём воздух */
+
+.about-facts {
+  margin: 40px 0;
+  padding: 24px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Каждая строка как отдельный блок */
+
+.about-facts div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Заголовки (ФОКУС и т.д.) */
+
+.about-facts strong {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+/* Значения */
+
+.about-facts span {
+  font-size: 16px;
+  color: var(--color-dark);
+}
+
+/* Финальная фраза — как цитата */
+
+.about-quote {
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-dark);
+}
+
+/* Фото — делаем мягче и дороже */
+
+.about-photo img {
+  box-shadow:
+    0 20px 60px rgba(15,23,42,0.18),
+    0 8px 20px rgba(15,23,42,0.08);
+
+  transition: transform .4s ease;
+}
+
+.about-photo img:hover {
+  transform: scale(1.01);
+}
