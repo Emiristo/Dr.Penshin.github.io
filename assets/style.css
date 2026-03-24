@@ -1,657 +1,376 @@
-/* =================================================
-   GLOBAL
-================================================= */
+/* ------------------------------------------------------------------
+   Импорт шрифтов
+------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* ------------------------------------------------------------------
+   Базовые сбросы и переменные
+------------------------------------------------------------------ */
 :root {
   --color-bg: #ffffff;
-  --color-dark: #0f172a;
-  --color-text: #334155;
-  --color-accent: #2563eb;
-  --color-soft: #f8fafc;
-
-  --radius: 14px;
-  --shadow: 0 8px 24px rgba(15,23,42,0.08);
-
-  --max-width: 960px;
+  --color-surface: #faf9f8;
+  --color-text-primary: #1e2a2f;
+  --color-text-secondary: #5b6f74;
+  --color-accent: #b28b5e;      /* тёплый золотисто-медный */
+  --color-accent-light: #e7d9ce;
+  --color-border: #eae6e2;
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 32px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.02);
+  --border-radius-card: 24px;
+  --border-radius-element: 40px;
+  --transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
-/* RESET */
-
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-
-  background: var(--color-bg);
-  color: var(--color-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
-
-/* =================================================
-   LAYOUT
-================================================= */
 
 .container {
-  max-width: var(--max-width);
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 0 32px;
 }
 
-/* =================================================
-   TYPOGRAPHY
-================================================= */
-
-h1 {
-  font-size: clamp(36px,6vw,54px);
-  margin-bottom: 24px;
-  color: var(--color-dark);
+/* ------------------------------------------------------------------
+   Типографика
+------------------------------------------------------------------ */
+h1, h2, h3, .logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #1e2a2f;
+}
+
 h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-  color: var(--color-dark);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  margin-top: 12px;
+  border-radius: 2px;
 }
 
 h3 {
-  font-size: 22px;
-  margin-bottom: 16px;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #2c3e42;
 }
 
 p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* =================================================
-   LINKS
-================================================= */
-
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a.card:hover {
-  text-decoration: none;
-}
-
-/* =================================================
-   HEADER
-================================================= */
-
+/* ------------------------------------------------------------------
+   Шапка сайта (премиальный минимализм)
+------------------------------------------------------------------ */
 .site-header {
-  background: #fff;
-  border-bottom: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 1rem 0;
 }
 
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .logo {
+  font-size: 1.75rem;
   font-weight: 600;
-  font-size: 18px;
-  color: var(--color-dark);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #2c3e42 0%, #b28b5e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
 }
 
 .main-nav a {
-  margin-left: 24px;
-  color: var(--color-text);
-  font-size: 16px;
-  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: var(--transition);
+  font-size: 0.95rem;
+  letter-spacing: -0.2px;
 }
 
 .main-nav a:hover {
   color: var(--color-accent);
 }
 
-/* ACTIVE NAV */
-
-.main-nav a.active {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
-.main-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: var(--color-accent);
-  border-radius: 2px;
-}
-
-/* =================================================
-   HERO
-================================================= */
-
-.hero {
-  min-height: 100vh;
-  background: var(--color-dark);
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ------------------------------------------------------------------
+   Page Header (заголовок страницы)
+------------------------------------------------------------------ */
+.page-header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 0 48px;
+  background: linear-gradient(145deg, #ffffff 0%, #faf7f2 100%);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.hero h1 { color:#fff; }
-
-.hero h2 {
-  font-size: clamp(20px,3vw,24px);
-  font-weight: 400;
-  opacity: .9;
+.page-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #5b6f74;
 }
 
-.hero p {
-  max-width: 520px;
-  margin-inline: auto;
-  opacity: .8;
-}
-
-.btn {
-  display:inline-block;
-  background: var(--color-accent);
-  color:#fff;
-  padding:12px 22px;
-  border-radius:var(--radius);
-  margin-top:24px;
-}
-
-.btn:hover { opacity:.9; }
-
-/* =================================================
-   SECTIONS
-================================================= */
-
-.section-light { background:#fff; }
-.section-soft { background:var(--color-soft); }
-.section-dark { background:var(--color-dark); color:#fff; }
-
-/* =================================================
-   GRID + CARDS
-================================================= */
-
-.grid {
-  display:grid;
-  gap:20px;
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-}
-
-.card {
-  background:#fff;
-  border-radius:var(--radius);
-  padding:24px;
-  box-shadow:var(--shadow);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-
-  transition:.2s ease;
-}
-
-.card:hover {
-  transform:translateY(-4px) scale(1.015);
-  box-shadow:0 18px 40px rgba(15,23,42,.15);
-}
-
-/* =================================================
-   ABOUT
-================================================= */
-
-.about-grid {
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.about-photo img {
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  border-radius:24px;
-  box-shadow:0 30px 80px rgba(15,23,42,.25);
-}
-
-.about-lead {
-  font-size:21px;
-}
-
-.about-facts {
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  margin:32px 0;
-}
-
-.about-facts strong {
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  color:#94a3b8;
-}
-
-/* =================================================
-   PROCESS CARDS (CORE BLOCK)
-================================================= */
-/* =================================================
-   PROCESS CARDS — POSTER → VIDEO HOVER
-================================================= */
-
-.process-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-  margin-top: 64px;
-}
-
-/* CARD */
-
-.process-card {
-  position: relative;
-  aspect-ratio: 4 / 3;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  padding: 32px;
-  border-radius: 18px;
-  overflow: hidden;
-
-  text-decoration: none;
-  color: inherit;
-
-  cursor: pointer;
-
-  transition: transform .28s ease, box-shadow .28s ease;
-}
-
-.process-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 35px 80px rgba(15,23,42,.22);
-}
-
-/* MEDIA LAYER */
-
-.process-media {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* VIDEO */
-
-.process-media video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.8);
-  pointer-events: none;
-}
-
-/* VIDEO APPEARS ON HOVER */
-
-.process-card:hover video {
-  opacity: 1;
-}
-
-/* GRADIENT ONLY ON HOVER */
-
-.process-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.2),
-    transparent
-  );
-
-  opacity: 0;
-  transition: opacity .35s ease;
-}
-
-.process-card:hover .process-media::after {
-  opacity: 1;
-}
-/* TEXT */
-
-.process-card h4,
-.process-card p {
-  position: relative;
-  z-index: 3;
-}
-
-.process-card h4 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.process-card p {
-  margin: 0;
-  font-size: 15px;
-  color: rgba(255,255,255,.85);
-}
-
-/* MOBILE */
-
-@media (max-width:768px) {
-
-  .process-cards {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .process-card {
-    padding: 20px;
-  }
-
-
-}
-
-/* =================================================
-   WORK SECTION
-================================================= */
-
-.work h2 {
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.work .grid {
-  max-width:900px;
-  margin:auto;
-}
-
-/* =================================================
-   ANIMATIONS
-================================================= */
-
-@keyframes softFadeUp {
-  from {
-    opacity:0;
-    transform:translateY(16px);
-  }
-  to {
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.soft-appear {
-  animation:softFadeUp .7s ease forwards;
-}
-
-/* =================================================
-   MOBILE
-================================================= */
-
-@media (max-width:900px) {
-  .about-grid {
-    grid-template-columns:1fr;
-    gap:48px;
-  }
-
-  .about-photo img {
-    height:380px;
-  }
-}
-
-@media (max-width:768px) {
-
-  .process-cards {
-    grid-template-columns:1fr;
-    gap:24px;
-  }
-
-  .process-card {
-    padding:20px;
-  }
-}
-/* =====================================
-   WORK PROCESS NAVIGATION
-===================================== */
-
+/* ------------------------------------------------------------------
+   Назад к процессу
+------------------------------------------------------------------ */
 .process-nav-back {
-  margin-bottom: 30px;
+  margin: 40px 0 20px;
 }
 
 .process-nav-back a {
-  font-size: 14px;
-  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: var(--transition);
+  padding: 8px 0;
 }
 
 .process-nav-back a:hover {
   color: var(--color-accent);
+  transform: translateX(-4px);
 }
 
-/* HORIZONTAL FLOW */
+/* ------------------------------------------------------------------
+   Секция контента (светлая)
+------------------------------------------------------------------ */
+.section-light {
+  background-color: var(--color-surface);
+  padding: 80px 0;
+  border-radius: 48px 48px 0 0;
+  margin-top: -1px;
+}
 
+.section-light .container {
+  max-width: 1200px;
+}
+
+/* ------------------------------------------------------------------
+   Информационные карточки (info-list)
+------------------------------------------------------------------ */
+.info-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.info-item {
+  background: var(--color-bg);
+  padding: 32px 28px;
+  border-radius: var(--border-radius-card);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent-light);
+  box-shadow: var(--shadow-hover);
+}
+
+.info-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.info-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------
+   Процессная навигация (шаги)
+------------------------------------------------------------------ */
 .process-flow {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
-
-  margin-top: 80px;
   flex-wrap: wrap;
+  gap: 1rem;
+  margin: 56px 0 64px;
+  padding: 20px 24px;
+  background: var(--color-bg);
+  border-radius: 80px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .process-step {
-  padding: 10px 18px;
-  border-radius: 999px;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  background: #f1f5f9;
-  color: #475569;
-
   text-decoration: none;
-
-  transition: all .2s ease;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 40px;
+  transition: var(--transition);
+  color: var(--color-text-secondary);
+  background: transparent;
+  font-size: 1rem;
 }
 
-.process-step:hover {
-  background: #e2e8f0;
+.process-step:hover:not(.active) {
+  background: var(--color-accent-light);
+  color: var(--color-text-primary);
 }
-
-/* ACTIVE STEP */
 
 .process-step.active {
   background: var(--color-accent);
-  color: #ffffff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(178, 139, 94, 0.25);
 }
-
-/* CONNECTOR */
 
 .process-divider {
-  color: #cbd5e1;
-  font-size: 14px;
-}
-/* ===============================
-   ABOUT — PREMIUM REFINEMENT
-================================ */
-
-/* Контент как колонка */
-
-.about-content {
-  max-width: 520px;
+  color: var(--color-border);
+  font-weight: 300;
+  font-size: 1.2rem;
+  user-select: none;
 }
 
-/* Заголовок — чище */
+/* ------------------------------------------------------------------
+   Адаптивность (мобильные устройства)
+------------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
 
-.about-content h2 {
-  margin-bottom: 28px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-header {
+    padding: 48px 0 32px;
+  }
+
+  .section-light {
+    padding: 48px 0;
+    border-radius: 32px 32px 0 0;
+  }
+
+  .info-list {
+    gap: 24px;
+  }
+
+  .info-item {
+    padding: 24px;
+  }
+
+  .process-flow {
+    border-radius: 40px;
+    gap: 0.5rem;
+    padding: 16px 12px;
+  }
+
+  .process-step {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+
+  .process-divider {
+    font-size: 1rem;
+  }
 }
 
-/* Первый абзац — якорь */
+@media (max-width: 480px) {
+  .process-flow {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    border-radius: 32px;
+  }
 
-.about-lead {
-  font-size: 22px;
-  line-height: 1.6;
-  color: var(--color-dark);
-  margin-bottom: 32px;
+  .process-divider {
+    display: none;
+  }
+
+  .process-step {
+    text-align: center;
+  }
 }
 
-/* Основной текст — легче */
-
-.about-content p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #475569;
+/* ------------------------------------------------------------------
+   Дополнительные акценты для премиальности
+------------------------------------------------------------------ */
+::selection {
+  background: var(--color-accent-light);
+  color: var(--color-text-primary);
 }
 
-/* Разделение смысловых блоков */
-
-.about-content p + p {
-  margin-top: 10px;
+/* Плавный скролл */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Убираем "кашу" — даём воздух */
-
-.about-facts {
-  margin: 40px 0;
-  padding: 24px 0;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-/* Каждая строка как отдельный блок */
-
-.about-facts div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Заголовки (ФОКУС и т.д.) */
-
-.about-facts strong {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
-
-/* Значения */
-
-.about-facts span {
-  font-size: 16px;
-  color: var(--color-dark);
-}
-
-/* Финальная фраза — как цитата */
-
-.about-quote {
-  margin-top: 40px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-dark);
-}
-
-/* Фото — делаем мягче и дороже */
-
-.about-photo img {
-  box-shadow:
-    0 20px 60px rgba(15,23,42,0.18),
-    0 8px 20px rgba(15,23,42,0.08);
-
-  transition: transform .4s ease;
-}
-
-.about-photo img:hover {
-  transform: scale(1.01);
-}
-/* ===============================
-   ABOUT FACTS — PREMIUM BLOCK
-================================ */
-
-.about-facts {
-  margin: 44px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-/* Карточка строки */
-
-.fact-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 18px 20px;
-  border-radius: 12px;
-
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-
-  transition: all .25s ease;
-}
-
-/* subtle hover */
-
-.fact-item:hover {
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(15,23,42,.06);
-}
-
-/* Лейбл (Фокус) */
-
-.fact-label {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
-
-/* Значение */
-
-.fact-value {
-  font-size: 16px;
-  color: var(--color-dark);
-  text-align: right;
-  max-width: 60%;
+/* Улучшенные фокусы для доступности */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
