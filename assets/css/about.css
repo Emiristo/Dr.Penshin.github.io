@@ -1,5 +1,5 @@
 /* =================================================
-   ABOUT — CLEAN PREMIUM
+   ABOUT — MINIMAL PREMIUM
 ================================================= */
 
 .about-grid {
@@ -33,6 +33,7 @@
 
 .about-content h2 {
   margin-bottom: 28px;
+  font-weight: 600;
 }
 
 /* LEAD */
@@ -52,33 +53,31 @@
   color: #475569;
 }
 
-/* spacing between paragraphs */
+/* spacing */
 
 .about-content p + p {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* ===============================
-   FACTS — MINIMAL (APPLE STYLE)
+   FACTS — CLEAN LIST
 ================================ */
 
 .about-facts {
-  margin: 40px 0;
+  margin: 36px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
-/* each row */
+/* row */
 
 .fact-item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 
-  padding: 12px 0;
-
-  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 0;
 }
 
 /* label */
@@ -102,15 +101,13 @@
 /* QUOTE */
 
 .about-quote {
-  margin-top: 36px;
+  margin-top: 32px;
   font-size: 18px;
   line-height: 1.6;
   color: var(--color-dark);
 }
 
-/* ===============================
-   MOBILE
-================================ */
+/* MOBILE */
 
 @media (max-width:900px) {
 
