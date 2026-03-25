@@ -1,187 +1,245 @@
-/* =================================================
-   BASE DESIGN SYSTEM — DR PENSHIN
-================================================= */
-
-/* SMOOTH SCROLL */
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* VARIABLES */
-
+/* ------------------------------------------------------------------
+   Базовые переменные и сбросы
+------------------------------------------------------------------ */
 :root {
-  --color-bg:#ffffff;
-  --color-dark:#0f172a;
-  --color-text:#334155;
-  --color-accent:#2563eb;
-  --color-soft:#f8fafc;
-
-  --radius:14px;
-  --shadow:0 8px 24px rgba(15,23,42,.08);
-
-  --max-width:960px;
+  --color-bg: #ffffff;
+  --color-surface: #faf9f8;
+  --color-soft: #f5f2ef;
+  --color-dark-bg: #1e2a2f;
+  --color-text-primary: #1e2a2f;
+  --color-text-secondary: #5b6f74;
+  --color-accent: #b28b5e;
+  --color-accent-light: #e7d9ce;
+  --color-border: #eae6e2;
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 32px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.02);
+  --border-radius-card: 24px;
+  --border-radius-element: 40px;
+  --transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
-/* RESET */
-
-*,
-*::before,
-*::after {
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  font-family:"Inter",system-ui,-apple-system,
-  BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-
-  background:var(--color-bg);
-  color:var(--color-text);
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* =================================================
-   LAYOUT
-================================================= */
-
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:60px 20px;
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-/* =================================================
-   TYPOGRAPHY
-================================================= */
-
-h1{
-  font-size:clamp(36px,6vw,54px);
-  letter-spacing:-.02em;
-  margin-bottom:24px;
+/* ------------------------------------------------------------------
+   Типографика
+------------------------------------------------------------------ */
+h1, h2, h3, h4, .logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-h2{
-  font-size:30px;
-  margin-bottom:20px;
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #1e2a2f;
 }
 
-h3{
-  font-size:22px;
-  margin-bottom:16px;
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
 }
 
-p{
-  font-size:18px;
-  line-height:1.7;
+h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  margin-top: 12px;
+  border-radius: 2px;
 }
 
-/* =================================================
-   LINKS
-================================================= */
-
-a{
-  color:var(--color-accent);
-  text-decoration:none;
-  font-weight:500;
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #2c3e42;
 }
 
-/* =================================================
-   HEADER
-================================================= */
-
-.site-header{
-  background:#fff;
-  border-bottom:1px solid #e2e8f0;
-  position:sticky;
-  top:0;
-  z-index:100;
+h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: #2c3e42;
 }
 
-.site-header .container{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 20px;
+p {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.logo{
-  font-weight:600;
-  font-size:18px;
-  color:var(--color-dark);
+/* ------------------------------------------------------------------
+   Кнопка (универсальная)
+------------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: var(--border-radius-element);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(178, 139, 94, 0.2);
+  border: none;
+  cursor: pointer;
+  text-align: center;
 }
 
-.main-nav a{
-  margin-left:24px;
-  color:var(--color-text);
-  position:relative;
+.btn:hover {
+  background: #9e764e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(178, 139, 94, 0.25);
 }
 
-.main-nav a.active{
-  color:var(--color-accent);
-  font-weight:600;
+.btn:active {
+  transform: translateY(0);
 }
 
-.main-nav a.active::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:100%;
-  height:2px;
-  background:var(--color-accent);
+/* ------------------------------------------------------------------
+   Шапка сайта
+------------------------------------------------------------------ */
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
 }
 
-/* =================================================
-   BUTTON
-================================================= */
-
-.btn{
-  display:inline-block;
-  background:var(--color-accent);
-  color:#fff;
-  padding:12px 22px;
-  border-radius:var(--radius);
-  margin-top:24px;
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* =================================================
-   GRID
-================================================= */
-
-.grid{
-  display:grid;
-  gap:20px;
+.logo {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #2c3e42 0%, #b28b5e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 
-.grid-3{
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+.logo:hover {
+  opacity: 0.85;
 }
 
-/* =================================================
-   GENERIC CARD
-================================================= */
-
-.card{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:24px;
-  box-shadow:var(--shadow);
-  text-align:center;
-  transition:.2s ease;
+.main-nav {
+  display: flex;
+  gap: 2rem;
 }
 
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(15,23,42,.15);
+.main-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: var(--transition);
+  font-size: 0.95rem;
+  letter-spacing: -0.2px;
 }
 
-/* =================================================
-   SECTIONS BACKGROUNDS
-================================================= */
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--color-accent);
+}
 
-.section-light{ background:#fff; }
-.section-soft{ background:var(--color-soft); }
-.section-dark{
-  background:var(--color-dark);
-  color:#fff;
+/* ------------------------------------------------------------------
+   Секции (общие)
+------------------------------------------------------------------ */
+.section-dark,
+.section-light,
+.section-soft {
+  padding: 80px 0;
+}
+
+.section-dark {
+  background: linear-gradient(145deg, #1e2a2f 0%, #2c3e42 100%);
+  color: white;
+}
+
+.section-light {
+  background-color: var(--color-bg);
+}
+
+.section-soft {
+  background: linear-gradient(145deg, #faf9f8 0%, #ffffff 100%);
+  border-radius: 48px 48px 0 0;
+}
+
+/* Адаптивность (общая) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .section-dark,
+  .section-light,
+  .section-soft {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
