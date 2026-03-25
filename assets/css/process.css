@@ -1,76 +1,63 @@
-/* =================================================
-   PROCESS CARDS
-================================================= */
-
+/* ------------------------------------------------------------------
+   Процесс работы (карточки с видео)
+------------------------------------------------------------------ */
 .process-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-  margin-top: 64px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
 }
 
 .process-card {
-  position: relative;
-  aspect-ratio: 4 / 3;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  padding: 32px;
-  border-radius: 18px;
+  background: var(--color-bg);
+  border-radius: var(--border-radius-card);
   overflow: hidden;
-
   text-decoration: none;
-  color: #ffffff;
-
-  cursor: pointer;
-  transition: transform .28s ease, box-shadow .28s ease;
+  color: inherit;
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .process-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 35px 80px rgba(15,23,42,.22);
+  transform: translateY(-6px);
+  border-color: var(--color-accent-light);
+  box-shadow: var(--shadow-hover);
 }
 
 .process-media {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #eae6e2;
 }
 
 .process-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(.8);
+  transition: transform 0.4s ease;
 }
 
-.process-card h4,
-.process-card p {
-  position: relative;
-  z-index: 2;
+.process-card:hover .process-media video {
+  transform: scale(1.05);
 }
 
 .process-card h4 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 600;
+  padding: 0 20px;
+  margin: 20px 0 8px;
+  font-size: 1.4rem;
 }
 
 .process-card p {
+  padding: 0 20px 24px;
   margin: 0;
-  font-size: 15px;
-  color: rgba(255,255,255,.85);
+  font-size: 0.9rem;
 }
 
-@media (max-width:768px) {
+/* Адаптив */
+@media (max-width: 768px) {
   .process-cards {
-    grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .process-card {
-    padding: 20px;
   }
 }
