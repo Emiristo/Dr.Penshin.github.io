@@ -1,32 +1,48 @@
-/* =================================================
-   HOME / HERO
-================================================= */
-
+/* ------------------------------------------------------------------
+   Hero (главный экран)
+------------------------------------------------------------------ */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
   max-width: 800px;
+  text-align: center;
   margin: 0 auto;
 }
 
 .hero h1 {
-  color: #ffffff;
+  color: white;
 }
 
 .hero h2 {
-  font-size: clamp(20px,3vw,24px);
-  font-weight: 400;
-  opacity: .9;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+}
+
+.hero h2:after {
+  display: none;
 }
 
 .hero p {
-  max-width: 520px;
-  margin: 0 auto;
-  opacity: .8;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  background: white;
+  color: #2c3e42;
+  box-shadow: none;
+}
+
+.hero .btn:hover {
+  background: var(--color-accent-light);
+  color: #2c3e42;
+  transform: translateY(-2px);
 }
