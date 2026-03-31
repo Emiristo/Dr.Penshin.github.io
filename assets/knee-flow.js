@@ -2,10 +2,10 @@
 
 // Все страницы кластера "Колено"
 const kneePages = [
-  { id: "running", title: "🏃‍♂️ После бега", url: "knee-running.html" },
-  { id: "gym", title: "🏋️ В зале", url: "knee-gym.html" },
-  { id: "surgery", title: "🏥 После операции", url: "knee-surgery.html" },
-  { id: "football", title: "⚽ Футбол", url: "knee-football.html" }
+  { id: "running", title: "После бега", url: "knee-running.html" },
+  { id: "gym", title: "В зале", url: "knee-gym.html" },
+  { id: "surgery", title: "После операции", url: "knee-surgery.html" },
+  { id: "football", title: "Футбол", url: "knee-football.html" }
 ];
 
 // Ключ для памяти
@@ -75,7 +75,7 @@ if (!currentPage) {
       // Конец маршрута
       const done = document.createElement("div");
       done.className = "card";
-      done.textContent = "✅ Вы изучили все ситуации с коленом";
+      done.textContent = "✅";
 
       container.appendChild(done);
 
